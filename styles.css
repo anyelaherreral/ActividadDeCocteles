@@ -146,6 +146,10 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.coctel:hover h3{
+  color: white;
+}
+
 #titulo-resultados {
   grid-column: 1 / -1;
   text-align: center;
