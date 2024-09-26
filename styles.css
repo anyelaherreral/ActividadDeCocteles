@@ -1,66 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background-color: #f4f4f4;
+  background: url('https://i.pinimg.com/originals/39/ec/d1/39ecd18dfe039f474138051777c6f0b9.gif') no-repeat center center fixed;
+  background-size: cover;
   padding: 20px;
 }
 
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.titulo h1 {
+  font-family: 'Fredericka the Great', serif;
+  color: #e23737;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  
+}
+
+.titulo img {
+  width: 80px;
+  height: auto;
+  margin-left: 0px;
+}
+
 .contenedor {
+  margin-top: 25px;
   display: flex;
   gap: 20px;
   height: 90vh;
 }
+
 .formulario,
 .resultados {
-  background-color: #fff;
+  background-color: #ffffffcd;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .formulario {
   flex: 1;
-  max-width: 35%;
+  max-width: 40%;
+  text-align: center;
 }
 
 .resultados {
   flex: 2;
   overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
+
 h1 {
+  font-family: 'Fredericka the Great', serif;
+  font-weight: 800;
   margin-bottom: 20px;
-  text-align: center;
+  color: #ff1077;
 }
+
 label {
   display: block;
-  margin: 10px;
+  margin: 15px 0 10px 0;
   font-weight: bold;
+  color: #333;
 }
 
 input,
 select {
   width: 80%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  border: 2px solid #e23737;
   border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff1077;
+}
+
+select option {
+  color: #e23737;
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px 15px;
-  background-color: #7628a7;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e23737;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 80%;
-  font-size: 14px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #4f2188;
+  background-color: #ff1077;
+}
+
+/* Coctel card styling */
+.coctel {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.coctel:hover {
+  background-color: #ff0909be;
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.coctel img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.coctel h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#titulo-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2rem;
+  color: #e23737;
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 768px) {
+  /* Stack elements vertically for smaller screens */
+  .contenedor {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .formulario {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .resultados {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .titulo h1 {
+    font-size: 2.5rem;
+  }
+
+  .titulo img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo h1 {
+    font-size: 2rem;
+  }
+
+  .coctel img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .coctel h3 {
+    font-size: 16px;
+  }
+
+  /* Adjust form input sizes for smaller screens */
+  input,
+  select {
+    width: 100%;
+  }
 }
